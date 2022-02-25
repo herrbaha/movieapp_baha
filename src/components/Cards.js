@@ -1,10 +1,11 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "../css/card.css";
 
 const Cards = () => {
   return (
-    <Card style={{ width: "18rem" }}>
+    <Card className="card-container">
       <Card.Img variant="top" src="holder.js/100px180" />
       <Card.Body>
         <Card.Title>Card Title</Card.Title>

@@ -1,10 +1,11 @@
 import React from "react";
 import { Form, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "../css/search.css";
 
 const Search = () => {
   return (
-    <Form>
+    <Form className="search-form">
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Search</Form.Label>
         <Form.Control type="password" placeholder="Search" />
