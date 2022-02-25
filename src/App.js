@@ -12,6 +12,28 @@ function App() {
   const [search, setSearch] = useState("");
   const [request, setRequest] = useState("");
 
+  useEffect(() => {
+    handlemovies();
+  },[request]);
+
+  const handlemovies = async () => {
+    const answer = await fetch(`https://api.themoviedb.org/3/movie/550?api_key=${appKey}`);
+    const data = await answer.json();
+    setMovie(data)
+
+  }
+
+  const handleSearch = (e) => {
+    setSearch(e.target.value)
+  }
+
+  const desiredMovie = (e) => {
+    e.preventDefault();
+    setRequest(search);
+    setSearch("");
+
+  }
+
   return (
     <div className="App">
      <Login/>
