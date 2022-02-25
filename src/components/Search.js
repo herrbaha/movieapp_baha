@@ -6,10 +6,10 @@ import "../css/search.css";
 
 const Search = () => {
 
-  const appKey = "a5cf72ed0dabf9f3f0651254233f61ae";
+  // const appKey = "a5cf72ed0dabf9f3f0651254233f61ae";
 
   const [movie, setMovie] = useState([]);
-  const [search, setSearch] = useState("");
+  const [find, setFind] = useState("");
   const [request, setRequest] = useState("");
 
   useEffect(() => {
@@ -17,27 +17,28 @@ const Search = () => {
   },[request]);
 
   const handlemovies = async () => {
-    const answer = await fetch(`https://api.themoviedb.org/3/movie/550?api_key=${appKey}`);
+    // const answer = await fetch(`https://api.themoviedb.org/3/movie/550?api_key=${appKey}`);
+    const answer = await fetch(`https://api.themoviedb.org/3/movie/550?api_key=63da3278ddb6c0a829bb2d4a2c1d118a`);
     const data = await answer.json();
     setMovie(data)
 
   }
 
   const handleSearch = (e) => {
-    setSearch(e.target.value)
+    setFind(e.target.value)
   }
 
   const desiredMovie = (e) => {
     e.preventDefault();
-    setRequest(search);
-    setSearch("");
+    setRequest(find);
+    setFind("");
 
   }
   return (
     <Form className="search-form" onSubmit={desiredMovie}>
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Search</Form.Label>
-        <Form.Control type="text" placeholder="Search" value={search} onChange={handleSearch}/>
+        <Form.Control type="text" placeholder="Search" value={find} onChange={handleSearch}/>
       </Form.Group>
       <Button variant="primary" type="submit">
         Search
