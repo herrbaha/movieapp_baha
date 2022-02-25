@@ -1,6 +1,7 @@
 import './App.css';
 import Login from './components/Login';
 import Search from './components/Search';
+import Cards from './components/Cards';
 
 function App() {
   return (
@@ -8,6 +9,8 @@ function App() {
      <Login/>
      <br/>
      <Search/>
+     <br/>
+     <Cards/>
     </div>
   );
 }
