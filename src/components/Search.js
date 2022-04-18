@@ -6,7 +6,6 @@ import "../css/search.css";
 
 const Search = () => {
 
-  // const appKey = "a5cf72ed0dabf9f3f0651254233f61ae";
 
   const [movie, setMovie] = useState([]);
   const [find, setFind] = useState("");
@@ -17,7 +16,6 @@ const Search = () => {
   },[request]);
 
   const getMovies = async () => {
-    // const answer = await fetch(`https://api.themoviedb.org/3/movie/550?api_key=${appKey}`);
     const answer = await fetch(`https://api.themoviedb.org/3/movie/550?api_key=63da3278ddb6c0a829bb2d4a2c1d118a`);
     const data = await answer.json();
     console.log(data);
